@@ -1,5 +1,6 @@
 public class Radio {
-    public int currentStation;
+    private int currentStation;
+    private int currentVolumeLevel;
 
     public int getCurrentStation() {
         return currentStation;
@@ -7,14 +8,16 @@ public class Radio {
 
     public void setCurrentStation(int newCurrentStation) {
         if (newCurrentStation < 0) {
-
             newCurrentStation = 9;
         }
         if (newCurrentStation > 9) {
-
             newCurrentStation = 0;
         }
         currentStation = newCurrentStation;
+    }
+
+    public int getCurrenVolumeLevel() {
+        return currentVolumeLevel;
     }
 
     public void setNextstation() {
@@ -37,19 +40,13 @@ public class Radio {
         }
         currentStation = newCurrentStation;
     }
-    public int currentVolumeLevel;
 
-    public int getCurrenVolumeLevel() {
-        return currentVolumeLevel;
-    }
 
     public void setCurrentVolumeLevel(int newCurrentVolumeLevel) {
         if (newCurrentVolumeLevel > 100) {
-
             newCurrentVolumeLevel = 100;
         }
         if (newCurrentVolumeLevel < 0) {
-
             newCurrentVolumeLevel = 0;
         }
         currentVolumeLevel = newCurrentVolumeLevel;
