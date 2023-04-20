@@ -1,3 +1,5 @@
+package ru.netology;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -9,8 +11,8 @@ public class RadioTest {
     public void shouldTestSetYourOwnStationQuantity () {
         Radio radio = new Radio(11);
 
-        Assertions.assertEquals(0,radio.getMinStation());
-        Assertions.assertEquals(10,radio.getMaxStation());
+        Assertions.assertEquals(0,radio.getMinStationNumber());
+        Assertions.assertEquals(10,radio.getMaxStationNumber());
 
     }
 
@@ -22,7 +24,7 @@ public class RadioTest {
 
 
         int expected = 9;
-        int actual = radio.getCurrentStation();
+        int actual = radio.getCurrentStationNumber();
 
         Assertions.assertEquals(expected, actual);
 
@@ -35,7 +37,7 @@ public class RadioTest {
 
 
         int expected = 0;
-        int actual = radio.getCurrentStation();
+        int actual = radio.getCurrentStationNumber();
 
         Assertions.assertEquals(expected, actual);
 
@@ -48,7 +50,7 @@ public class RadioTest {
         radio.setCurrentStationDirectly(10);
 
         int expected = 0;
-        int actual = radio.getCurrentStation();
+        int actual = radio.getCurrentStationNumber();
 
         Assertions.assertEquals(expected, actual);
     }
@@ -60,7 +62,7 @@ public class RadioTest {
         radio.setCurrentStationDirectly(-1);
 
         int expected = 0;
-        int actual = radio.getCurrentStation();
+        int actual = radio.getCurrentStationNumber();
 
         Assertions.assertEquals(expected, actual);
     }
@@ -73,7 +75,7 @@ public class RadioTest {
         radio.setNextstation();
 
         int expected = 0;
-        int actual = radio.getCurrentStation();
+        int actual = radio.getCurrentStationNumber();
 
         Assertions.assertEquals(expected, actual);
     }
@@ -87,7 +89,7 @@ public class RadioTest {
         radio.setPrevStation();
 
         int expected = 9;
-        int actual = radio.getCurrentStation();
+        int actual = radio.getCurrentStationNumber();
 
         Assertions.assertEquals(expected, actual);
     }

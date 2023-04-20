@@ -1,3 +1,5 @@
+package ru.netology;
+
 public class Radio {
     private int currentStation;
     private int currentVolumeLevel;
@@ -17,15 +19,15 @@ public class Radio {
         this.totalRadioStationQantity = totalRadioStationQantity;
     }
 
-    public int getMaxStation() {
+    public int getMaxStationNumber() {
         return maxStation;
     }
 
-    public int getMinStation() {
+    public int getMinStationNumber() {
         return minStation;
     }
 
-    public int getCurrentStation() {
+    public int getCurrentStationNumber() {
         return currentStation;
     }
 
