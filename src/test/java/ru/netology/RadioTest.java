@@ -2,11 +2,21 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class RadioTest {
+    Radio radio = new Radio();
+
+    @Test
+
+    public void shouldTestSetYourOwnStationQuantity () {
+        Radio radio = new Radio(11);
+
+        Assertions.assertEquals(0,radio.getMinStation());
+        Assertions.assertEquals(10,radio.getMaxStation());
+
+    }
 
     @Test
 
     public void shouldSetMaxStationDirectly () {
-        Radio radio = new Radio();
 
         radio.setCurrentStationDirectly(9);
 
@@ -20,7 +30,6 @@ public class RadioTest {
 
     @Test
     public void shouldSetMinStationDirectly () {
-        Radio radio = new Radio();
 
         radio.setCurrentStationDirectly(0);
 
@@ -35,7 +44,6 @@ public class RadioTest {
     @Test
 
     public void shouldNotSetAboveMaxStationDirectly() {
-        Radio radio = new Radio();
 
         radio.setCurrentStationDirectly(10);
 
@@ -48,7 +56,6 @@ public class RadioTest {
     @Test
 
     public void shouldNotSetUnderMinStationDirectly() {
-        Radio radio = new Radio();
 
         radio.setCurrentStationDirectly(-1);
 
@@ -60,7 +67,7 @@ public class RadioTest {
 
     @Test
     public void shouldSetZeroAboveMaxViaButton() {
-        Radio radio = new Radio();
+
         radio.setCurrentStation(9);
 
         radio.setNextstation();
@@ -74,7 +81,7 @@ public class RadioTest {
 
     @Test
     public void shouldSetNineUnderMinViaButton() {
-        Radio radio = new Radio();
+
         radio.setCurrentStation(0);
 
         radio.setPrevStation();
@@ -88,8 +95,8 @@ public class RadioTest {
 
     @Test
     public void shouldNotSetVolumeAboveMaxViaButton() {
-        Radio radio = new Radio();
-        radio.setCurrentVolumeLevel(101);
+
+        radio.setCurrentVolumeLevel(100);
 
         radio.setNextVolumeLevel();
 
@@ -101,8 +108,8 @@ public class RadioTest {
 
     @Test
     public void shouldNotSetVolumeUnderMinViaButton() {
-        Radio radio = new Radio();
-        radio.setCurrentVolumeLevel(-1);
+
+        radio.setCurrentVolumeLevel(0);
 
         radio.setPrevVolumeLevel();
 

@@ -1,6 +1,29 @@
 public class Radio {
     private int currentStation;
     private int currentVolumeLevel;
+    private int totalRadioStationQantity = 10;
+    private int maxStation = totalRadioStationQantity - 1;
+    private int minStation = totalRadioStationQantity = 0;
+    private int maxVolume = 100;
+    private int minVolume = 0;
+
+    public Radio (int setYourOwnStationQuantity) {
+        this.totalRadioStationQantity = setYourOwnStationQuantity;
+        this.maxStation = setYourOwnStationQuantity - 1;
+        this.minStation = setYourOwnStationQuantity = 0;
+    }
+
+    public Radio () {
+        this.totalRadioStationQantity = totalRadioStationQantity;
+    }
+
+    public int getMaxStation() {
+        return maxStation;
+    }
+
+    public int getMinStation() {
+        return minStation;
+    }
 
     public int getCurrentStation() {
         return currentStation;
@@ -11,11 +34,11 @@ public class Radio {
     }
 
     public void setCurrentStation(int newCurrentStation) {
-        if (newCurrentStation < 0) {
-            newCurrentStation = 9;
+        if (newCurrentStation < minStation) {
+            newCurrentStation = maxStation;
         }
-        if (newCurrentStation > 9) {
-            newCurrentStation = 0;
+        if (newCurrentStation > maxStation) {
+            newCurrentStation = minStation;
         }
         currentStation = newCurrentStation;
     }
@@ -32,10 +55,10 @@ public class Radio {
 
 
     public void setCurrentStationDirectly(int newCurrentStation) {
-        if (newCurrentStation < 0) {
+        if (newCurrentStation < minStation) {
             return;
         }
-        if (newCurrentStation > 9) {
+        if (newCurrentStation > maxStation) {
             return;
         }
         currentStation = newCurrentStation;
@@ -43,11 +66,11 @@ public class Radio {
 
 
     public void setCurrentVolumeLevel(int newCurrentVolumeLevel) {
-        if (newCurrentVolumeLevel > 100) {
-            newCurrentVolumeLevel = 100;
+        if (newCurrentVolumeLevel >= maxVolume) {
+            newCurrentVolumeLevel = maxVolume;
         }
-        if (newCurrentVolumeLevel < 0) {
-            newCurrentVolumeLevel = 0;
+        if (newCurrentVolumeLevel < minVolume) {
+            newCurrentVolumeLevel = minVolume;
         }
         currentVolumeLevel = newCurrentVolumeLevel;
     }
